@@ -12,7 +12,6 @@
 		E0116B601EB0C49F00640420 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0116B5F1EB0C49F00640420 /* Assets.xcassets */; };
 		E0116B631EB0C49F00640420 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0116B611EB0C49F00640420 /* LaunchScreen.storyboard */; };
 		E0116B6C1EB0C56D00640420 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0116B6B1EB0C56D00640420 /* Game.swift */; };
-		E0116B6E1EB0C65200640420 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0116B6D1EB0C65200640420 /* DataSource.swift */; };
 		E0116B761EB0C9D900640420 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0116B721EB0C9D900640420 /* Alamofire.framework */; };
 		E0116B771EB0C9D900640420 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E0116B721EB0C9D900640420 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E0116B781EB0C9D900640420 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0116B731EB0C9D900640420 /* Argo.framework */; };
@@ -34,6 +33,7 @@
 		E0116B9A1EB11B9000640420 /* StreamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0116B991EB11B9000640420 /* StreamCell.swift */; };
 		E0116B9E1EB12DCC00640420 /* APESuperHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0116B9D1EB12DCC00640420 /* APESuperHUD.framework */; };
 		E0116B9F1EB12DCC00640420 /* APESuperHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E0116B9D1EB12DCC00640420 /* APESuperHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E0116BA11EB13FA900640420 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0116BA01EB13FA900640420 /* DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,7 +63,6 @@
 		E0116B621EB0C49F00640420 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0116B641EB0C49F00640420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0116B6B1EB0C56D00640420 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		E0116B6D1EB0C65200640420 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		E0116B721EB0C9D900640420 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		E0116B731EB0C9D900640420 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = ../Carthage/Build/iOS/Argo.framework; sourceTree = "<group>"; };
 		E0116B741EB0C9D900640420 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = ../Carthage/Build/iOS/Curry.framework; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		E0116B971EB116BB00640420 /* StreamResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamResponse.swift; sourceTree = "<group>"; };
 		E0116B991EB11B9000640420 /* StreamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamCell.swift; sourceTree = "<group>"; };
 		E0116B9D1EB12DCC00640420 /* APESuperHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APESuperHUD.framework; path = ../Carthage/Build/iOS/APESuperHUD.framework; sourceTree = "<group>"; };
+		E0116BA01EB13FA900640420 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,13 +119,13 @@
 			children = (
 				E0116B581EB0C49F00640420 /* AppDelegate.swift */,
 				E0116B5F1EB0C49F00640420 /* Assets.xcassets */,
-				E0116B6D1EB0C65200640420 /* DataSource.swift */,
 				E0116B641EB0C49F00640420 /* Info.plist */,
 				E0116B611EB0C49F00640420 /* LaunchScreen.storyboard */,
 				E0116B5C1EB0C49F00640420 /* Main.storyboard */,
 				E0116B6A1EB0C56300640420 /* Model */,
 				E0116B9B1EB1225B00640420 /* Vendor */,
 				E0116B6F1EB0C92B00640420 /* View */,
+				E0116BA01EB13FA900640420 /* DataSource.swift */,
 			);
 			path = TopGames;
 			sourceTree = "<group>";
@@ -255,9 +255,9 @@
 				E0116B921EB10B5800640420 /* GamesViewController.swift in Sources */,
 				E0116B861EB0E6CB00640420 /* GameCell.swift in Sources */,
 				E0116B6C1EB0C56D00640420 /* Game.swift in Sources */,
-				E0116B6E1EB0C65200640420 /* DataSource.swift in Sources */,
 				E0116B591EB0C49F00640420 /* AppDelegate.swift in Sources */,
 				E0116B961EB1155C00640420 /* Stream.swift in Sources */,
+				E0116BA11EB13FA900640420 /* DataSource.swift in Sources */,
 				E0116B941EB1139300640420 /* StreamsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

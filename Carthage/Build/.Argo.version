@@ -1,0 +1,28 @@
+{
+  "commitish" : "v4.1.2",
+  "iOS" : [
+    {
+      "hash" : "4d3a137c1a9cd5343776495e266fcafa55fbcfe9395c5b5d92302fede33022e1",
+      "name" : "Argo"
+    }
+  ],
+  "xcodeVersion" : "Xcode 8.3.2\nBuild version 8E2002",
+  "watchOS" : [
+    {
+      "hash" : "fef289f6deb352f0bfd611c7e81b5c456de543f61161c100ae02dadfe2e771e4",
+      "name" : "Argo"
+    }
+  ],
+  "tvOS" : [
+    {
+      "hash" : "4727a9d87ff6b244d1211e5447441d5ec191b4460dcf8437983bdc63cc5c78bf",
+      "name" : "Argo"
+    }
+  ],
+  "Mac" : [
+    {
+      "hash" : "b7c694b6fcd84719b214f892b049dd919969e18be21a52b713ec8f13b4e39ff4",
+      "name" : "Argo"
+    }
+  ]
+}

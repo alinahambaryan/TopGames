@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A4C5CC478337760E7D7998E3706D87DFF12D3A26",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BE8B669609DD21BA706D9D1EFDB7EFA3943478BC" : 9223372036854775807,
+    "A4C5CC478337760E7D7998E3706D87DFF12D3A26" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "61CE5ABC-70B5-4464-8C22-B49F4F096439",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BE8B669609DD21BA706D9D1EFDB7EFA3943478BC" : "TopGames\/TopGames\/",
+    "A4C5CC478337760E7D7998E3706D87DFF12D3A26" : "TopGames\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TopGames",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TopGames.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/alinahambaryan\/TopGames.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A4C5CC478337760E7D7998E3706D87DFF12D3A26"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/alinahambaryan\/TopGames.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BE8B669609DD21BA706D9D1EFDB7EFA3943478BC"
+    }
+  ]
+}

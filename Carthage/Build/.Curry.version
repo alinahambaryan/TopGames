@@ -1,0 +1,28 @@
+{
+  "commitish" : "v3.0.0",
+  "iOS" : [
+    {
+      "hash" : "4603fad57010b73ee368eb9d7d992e9942523541eead19ab21a87a132d96a5a7",
+      "name" : "Curry"
+    }
+  ],
+  "xcodeVersion" : "Xcode 8.3.2\nBuild version 8E2002",
+  "watchOS" : [
+    {
+      "hash" : "567305b4e15c9cfc5b3fc7f7eb8436b9007a4ac9d7015332583c7d3e26e2257f",
+      "name" : "Curry"
+    }
+  ],
+  "tvOS" : [
+    {
+      "hash" : "f9041fab6466f2343b05d7b4aa242e61bf8d634b2ed833b4898c4d38266e974f",
+      "name" : "Curry"
+    }
+  ],
+  "Mac" : [
+    {
+      "hash" : "6e17398d7a08e67f3eed2cf2a9b8a5db6c6051f6b8b9fd928acfd7a1e384fae8",
+      "name" : "Curry"
+    }
+  ]
+}

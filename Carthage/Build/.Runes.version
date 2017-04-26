@@ -1,0 +1,28 @@
+{
+  "commitish" : "v4.0.1",
+  "iOS" : [
+    {
+      "hash" : "e59d8ba532c9a97c22ab736f2742f273e5757284e2f757815c7802784e6840ef",
+      "name" : "Runes"
+    }
+  ],
+  "xcodeVersion" : "Xcode 8.3.2\nBuild version 8E2002",
+  "watchOS" : [
+    {
+      "hash" : "44ca650559427871d556b0aa3376a773c04f470f1e444210efb4421d10afad88",
+      "name" : "Runes"
+    }
+  ],
+  "tvOS" : [
+    {
+      "hash" : "f30fa813e8879bf53cc5994c1d0731eb43d4fa423bd35e15ec4aaec86e4a8e00",
+      "name" : "Runes"
+    }
+  ],
+  "Mac" : [
+    {
+      "hash" : "c54622f933ca65d5d83fc7d82946f7fe48c6f04dbe51ed8e9a5e4832da579348",
+      "name" : "Runes"
+    }
+  ]
+}

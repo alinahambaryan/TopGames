@@ -1,0 +1,19 @@
+{
+  "commitish" : "1.1.2",
+  "iOS" : [
+    {
+      "hash" : "bfe76756000c19255bede5095c3b581ac35ae0ecfc795aa5657ee2f9bad596fd",
+      "name" : "APESuperHUD"
+    }
+  ],
+  "xcodeVersion" : "Xcode 8.3.2\nBuild version 8E2002",
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "Mac" : [
+
+  ]
+}
