@@ -18,7 +18,7 @@ class GamesViewController:BaseViewController, UITableViewDelegate, UITableViewDa
         APESuperHUD.appearance.messageFontSize = 14
         APESuperHUD.showOrUpdateHUD(loadingIndicator: .standard, message: "", presentingView: self.view)
         
-        DataSource.fetchTopGames(limit: 50) { (response, error) in
+        DataSource.fetchTopGames(limit:Constants.Games.topLimit) { (response, error) in
             if let games = response {
                 self.topGames = games.sorted(by: {$0.popularity > $1.popularity})
                 APESuperHUD.removeHUD(animated: false, presentingView: self.view, completion: {self.tableView.reloadData()})

@@ -26,7 +26,7 @@ class StreamsViewController : BaseViewController, UITableViewDelegate, UITableVi
         
         DataSource.fetchStreamForGame(name: game) { (response, error) in
             if let streams = response {
-                self.streams = streams.sorted(by: {$0.viewers > $1.viewers} )
+                self.streams = Array(streams.sorted(by: {$0.viewers > $1.viewers} ).prefix(Constants.Streams.topLimit))
                 APESuperHUD.removeHUD(animated: false, presentingView: self.view, completion: {self.tableView.reloadData()})
             }
             else {
@@ -44,5 +44,4 @@ class StreamsViewController : BaseViewController, UITableViewDelegate, UITableVi
         cell.configureCell(stream:self.streams[indexPath.row])
         return cell
     }
-
 }

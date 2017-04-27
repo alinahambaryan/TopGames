@@ -14,10 +14,9 @@ import Runes
 class DataSource{
     
     static func fetchTopGames(limit:Int, completionHandler: @escaping ([Game]?, Error?) -> ()){
-        let urlString = "https://api.twitch.tv/kraken/games/top?limit=" + String(limit)
+        let urlString = Constants.URLs.gamePath + String(limit)
         var request = URLRequest(url: URL(string: urlString)!)
-        request.allHTTPHeaderFields = ["Client-ID":"lb715ejwkdwk9b9ljrtowl1nj595kf8"]
-        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = [Constants.Twitch.header:Constants.Twitch.clientID]
         
         Alamofire.request(request).validate().responseJSON { response in
             switch response.result {
@@ -34,10 +33,9 @@ class DataSource{
     }
     
     static func fetchStreamForGame(name:String, completionHandler: @escaping ([Stream]?, Error?) -> ()){
-        let urlString = "https://api.twitch.tv/kraken/streams?game=" + name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let urlString = Constants.URLs.streamPath + name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         var request = URLRequest(url: URL(string: urlString)!)
-        request.allHTTPHeaderFields = ["Client-ID":"lb715ejwkdwk9b9ljrtowl1nj595kf8"]
-        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = [Constants.Twitch.header:Constants.Twitch.clientID]
         
         Alamofire.request(request).validate().responseJSON { response in
             switch response.result {
