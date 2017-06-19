@@ -33,7 +33,7 @@
 		E0116B9A1EB11B9000640420 /* StreamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0116B991EB11B9000640420 /* StreamCell.swift */; };
 		E0116B9E1EB12DCC00640420 /* APESuperHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0116B9D1EB12DCC00640420 /* APESuperHUD.framework */; };
 		E0116B9F1EB12DCC00640420 /* APESuperHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E0116B9D1EB12DCC00640420 /* APESuperHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E0116BA11EB13FA900640420 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0116BA01EB13FA900640420 /* DataSource.swift */; };
+		E0116BA11EB13FA900640420 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0116BA01EB13FA900640420 /* NetworkingManager.swift */; };
 		E0F468FB1EB1E36900F9A8C5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F468FA1EB1E36900F9A8C5 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,7 +78,7 @@
 		E0116B971EB116BB00640420 /* StreamResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamResponse.swift; sourceTree = "<group>"; };
 		E0116B991EB11B9000640420 /* StreamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamCell.swift; sourceTree = "<group>"; };
 		E0116B9D1EB12DCC00640420 /* APESuperHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APESuperHUD.framework; path = ../Carthage/Build/iOS/APESuperHUD.framework; sourceTree = "<group>"; };
-		E0116BA01EB13FA900640420 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		E0116BA01EB13FA900640420 /* NetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		E0F468FA1EB1E36900F9A8C5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,7 +127,7 @@
 				E0116B6A1EB0C56300640420 /* Model */,
 				E0116B9B1EB1225B00640420 /* Vendor */,
 				E0116B6F1EB0C92B00640420 /* View */,
-				E0116BA01EB13FA900640420 /* DataSource.swift */,
+				E0116BA01EB13FA900640420 /* NetworkingManager.swift */,
 				E0F468FA1EB1E36900F9A8C5 /* Constants.swift */,
 			);
 			path = TopGames;
@@ -261,7 +261,7 @@
 				E0116B6C1EB0C56D00640420 /* Game.swift in Sources */,
 				E0116B591EB0C49F00640420 /* AppDelegate.swift in Sources */,
 				E0116B961EB1155C00640420 /* Stream.swift in Sources */,
-				E0116BA11EB13FA900640420 /* DataSource.swift in Sources */,
+				E0116BA11EB13FA900640420 /* NetworkingManager.swift in Sources */,
 				E0116B941EB1139300640420 /* StreamsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

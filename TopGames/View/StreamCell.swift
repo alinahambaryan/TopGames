@@ -10,7 +10,7 @@
 import UIKit
 import AlamofireImage
 
-class StreamCell:UITableViewCell {
+class StreamCell : UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var pictureImageView: UIImageView!

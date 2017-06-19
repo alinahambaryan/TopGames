@@ -9,34 +9,22 @@
 import UIKit
 import APESuperHUD
 
-class GamesViewController:BaseViewController, UITableViewDelegate, UITableViewDataSource{
+class GamesViewController : BaseViewController {
     @IBOutlet weak var tableView: UITableView!
-    
-    var topGames : [Game] = []
-    
-    override func fetchData(){
-        APESuperHUD.appearance.messageFontSize = 14
-        APESuperHUD.showOrUpdateHUD(loadingIndicator: .standard, message: "", presentingView: self.view)
-        
-        DataSource.fetchTopGames(limit:Constants.Games.topLimit) { (response, error) in
-            if let games = response {
-                self.topGames = games.sorted(by: {$0.popularity > $1.popularity})
-                APESuperHUD.removeHUD(animated: false, presentingView: self.view, completion: {self.tableView.reloadData()})
-            }
-            else {
-                APESuperHUD.showOrUpdateHUD(icon: .info, message: (error?.localizedDescription)!, particleEffectFileName: nil, presentingView: self.view, completion: {})
+    fileprivate var topGames : [Game] = []
+
+    override func fetchData(completion: @escaping ([AnyObject]?, Error?) -> ()) {
+        DispatchQueue.global(qos: .background).async {
+            NetworkingManager.fetchTopGames(limit:Constants.Games.topLimit){ [weak self](response, error) in
+                if let games = response {
+                    self?.topGames = games.sorted(by: {$0.popularity > $1.popularity})
+                    DispatchQueue.main.async {
+                        self?.tableView.reloadData()
+                    }
+                }
+                completion(self?.topGames as [AnyObject]?, error)
             }
         }
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return topGames.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as! GameCell
-        cell.configure(game:self.topGames[indexPath.row])
-        return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -47,5 +35,16 @@ class GamesViewController:BaseViewController, UITableViewDelegate, UITableViewDa
                 streamsViewController.game = topGames[indexPath.row].name
             }
         }
+    }
+}
+extension GamesViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return topGames.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as! GameCell
+        cell.configure(game:self.topGames[indexPath.row])
+        return cell
     }
 }

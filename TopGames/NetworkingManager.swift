@@ -11,14 +11,25 @@ import Alamofire
 import Argo
 import Runes
 
-class DataSource{
-    
-    static func fetchTopGames(limit:Int, completionHandler: @escaping ([Game]?, Error?) -> ()){
+class Route {
+    static func topGamesRequest(by limit: Int) -> URLRequest {
         let urlString = Constants.URLs.gamePath + String(limit)
         var request = URLRequest(url: URL(string: urlString)!)
         request.allHTTPHeaderFields = [Constants.Twitch.header:Constants.Twitch.clientID]
-        
-        Alamofire.request(request).validate().responseJSON { response in
+        return request
+    }
+    
+    static func streamsRequest(by name:String) -> URLRequest {
+        let urlString = Constants.URLs.streamPath + name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        var request = URLRequest(url: URL(string: urlString)!)
+        request.allHTTPHeaderFields = [Constants.Twitch.header:Constants.Twitch.clientID]
+        return request
+    }
+}
+
+class NetworkingManager{
+    static func fetchTopGames(limit:Int, completionHandler: @escaping ([Game]?, Error?) -> ()){
+        Alamofire.request(Route.topGamesRequest(by: limit)).validate().responseJSON { response in
             switch response.result {
             case .success:
                 if let j: Any = response.result.value {
@@ -33,11 +44,7 @@ class DataSource{
     }
     
     static func fetchStreamForGame(name:String, completionHandler: @escaping ([Stream]?, Error?) -> ()){
-        let urlString = Constants.URLs.streamPath + name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        var request = URLRequest(url: URL(string: urlString)!)
-        request.allHTTPHeaderFields = [Constants.Twitch.header:Constants.Twitch.clientID]
-        
-        Alamofire.request(request).validate().responseJSON { response in
+        Alamofire.request(Route.streamsRequest(by: name)).validate().responseJSON { response in
             switch response.result {
             case .success:
                 if let j: Any = response.result.value {

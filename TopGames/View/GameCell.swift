@@ -9,7 +9,7 @@
 import UIKit
 import AlamofireImage
 
-class GameCell:UITableViewCell {
+class GameCell : UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var pictureImageView: UIImageView!

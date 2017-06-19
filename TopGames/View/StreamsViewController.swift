@@ -9,32 +9,33 @@
 import UIKit
 import APESuperHUD
 
-class StreamsViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class StreamsViewController : BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var game:String = ""
-    var streams:[Stream] = []
-
+    var game : String = ""
+    fileprivate var streams : [Stream] = []
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.navigationItem.title = game
     }
-  
-    override func fetchData() {
-        APESuperHUD.showOrUpdateHUD(loadingIndicator: .standard, message: "", presentingView: self.view)
-        
-        DataSource.fetchStreamForGame(name: game) { (response, error) in
-            if let streams = response {
-                self.streams = Array(streams.sorted(by: {$0.viewers > $1.viewers} ).prefix(Constants.Streams.topLimit))
-                APESuperHUD.removeHUD(animated: false, presentingView: self.view, completion: {self.tableView.reloadData()})
-            }
-            else {
-                APESuperHUD.showOrUpdateHUD(icon: .info, message: (error?.localizedDescription)!, particleEffectFileName: nil, presentingView: self.view, completion: {})
+    
+    override func fetchData(completion: @escaping ([AnyObject]?, Error?) -> ()) {
+        DispatchQueue.global(qos: .background).async {
+            NetworkingManager.fetchStreamForGame(name: self.game) {[weak self] (response, error) in
+                if let streams = response {
+                   self?.streams = Array(streams.sorted(by: {$0.viewers > $1.viewers} ).prefix(Constants.Streams.topLimit))
+                    DispatchQueue.main.async {
+                        self?.tableView.reloadData()
+                    }
+                }
+                completion(self?.streams as [AnyObject]?, error)
             }
         }
     }
-    
+
+}
+extension StreamsViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return streams.count
     }

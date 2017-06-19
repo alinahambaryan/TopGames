@@ -8,20 +8,22 @@
 
 import UIKit
 import Alamofire
+import APESuperHUD
 
 class BaseViewController : UIViewController {
-    
-    func showErrorWithMessage(title: String, message: String, actionHandler: @escaping () -> Void) {
-        let alertController = UIAlertController(title: NSLocalizedString(title, comment: ""), message: NSLocalizedString(message, comment: ""), preferredStyle: .alert)
-        let okAction = UIAlertAction(title:  NSLocalizedString("OK", comment: ""), style: .default) {  _ in  actionHandler() }
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func fetchData(){}
+    func fetchData(completion: @escaping ([AnyObject]?, Error?) -> ()){}
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
+      
+        APESuperHUD.appearance.messageFontSize = 14
+        APESuperHUD.showOrUpdateHUD(loadingIndicator: .standard, message: "", presentingView: self.view)
+
+        self.fetchData { (response, error) in
+            if (error != nil) {
+                APESuperHUD.showOrUpdateHUD(icon: .info, message: (error?.localizedDescription)!, particleEffectFileName: nil, presentingView: self.view, completion: {})
+            }
+        }
+        APESuperHUD.removeHUD(animated: false, presentingView: self.view, completion: nil)
     }
 }

@@ -10,7 +10,6 @@ import Foundation
 
 
 public struct Constants {
-    
     public struct Games {
         public static let topLimit = 5
     }
