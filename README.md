@@ -1,5 +1,5 @@
 
-iOS Test
+#iOS Test
 
 Thank you for taking this test. Read the following instructions carefully and follow them as closely as possible. Feel free to ask question or make your own assumptions. If you do, document them!
 
@@ -7,13 +7,13 @@ We recommend that you take notes about the steps you take and the time you spent
 
 The solution you create for this test should be your own, not someone else's.
 
-The Task
+#The Task
 
 The purpose of the test is to let you solve a similar task and thus give us an idea for how you would go about to solve such an assignment.
 
 Your task therefore is to develop an iOS app using Swift that can download and visualize data from twitch (a streaming service for gaming content). The data can be fetched from the twitch.tv API. Using this API you should visualize what games are popular at the moment and what streams are popular for every individual game.
 
-The Specifics
+#The Specifics
 
 In order to access the twitch API you are required to provide a header called Client-ID. For this test feel free to use the Client-ID: “lb715ejwkdwk9b9ljrtowl1nj595kf8”.
 
@@ -35,7 +35,7 @@ What tools can I use?
 There are no limitations to what libraries you can use and you are free to use whatever tools you want to complete the task.
 The only limitation is that the code is written in Swift by you. This means that you can not write the code in Xamarin/React Native/Phone Gap etc.
 
-Delivery
+#Delivery
 
 The test should preferably be delivered using a git service, for instance github or bitbucket. Alternatively you can send us a link to an archive of your project (zip file or similar).
 
